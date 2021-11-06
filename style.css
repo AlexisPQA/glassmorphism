@@ -161,3 +161,7 @@ body{
     0 0 45px rgb(209, 50, 183),
     0 0 60px rgb(209, 50, 183);
 }
+
+.navigation__item--active ion-icon{
+    opacity:1;
+}
