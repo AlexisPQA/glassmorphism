@@ -28,6 +28,18 @@ body{
     cursor: pointer;
     backdrop-filter:blur(15px);
     z-index: 1;
+    
+    
+}
+
+.navigation__item:first-child{
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.navigation__item:nth-child(5) {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 .navigation__item ion-icon{
@@ -43,6 +55,7 @@ body{
     background-color: rgba(255, 255, 255, 0.1);
     opacity: 1;
 }
+
 
 .navigation__item-title{
     position: absolute;
