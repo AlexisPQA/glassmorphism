@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Glassmorphism</title>
+</head>
+<body>
+    <div class="navigation">
+        <div class="navigation__item" >
+            <ion-icon name="home-outline"></ion-icon>
+            <div class="navigation__item-title">
+                    Home
+            </div>
+        </div>
+        <div class="navigation__item" >
+            <ion-icon name="person-outline"></ion-icon>
+            <div class="navigation__item-title">User</div>
+        </div>
+        <div class="navigation__item" >    
+            <ion-icon name="add-circle-outline"></ion-icon>
+            <div class="navigation__item-title">More</div>
+        </div>
+        <div class="navigation__item" >
+            <ion-icon name="settings-outline"></ion-icon>
+            <div class="navigation__item-title">Setting</div>
+        </div>
+        <div class="navigation__item" >
+            <ion-icon name="settings-outline"></ion-icon>
+            <div class="navigation__item-title">Message</div>
+        </div>
+
+        <div class="navigation__indicator"></div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        const indicator =document.getElementsByClassName("navigation__indicator")[0];
+        const navItem = document.querySelectorAll(".navigation__item");
+        function moveIndicator(e){
+            indicator.style.left = e.offsetLeft + e.offsetWidth/2 + "px";
+        }
+
+        navItem.forEach( item => {
+            item.addEventListener("mouseover", (e) => {
+                moveIndicator(e.target)
+                navItem.forEach( item => item.classList.remove("navigation__item--active"))
+                e.target.classList.add("navigation__item--active")
+            })
+        })
+
+        // function activeItem(){
+        //     navItem.forEach( item =>{
+        //         item.classList.remove("navigation__item--active")
+        //         this.classList.add("navigation__item--active");
+        //     })
+        // }
+        
+        // navItem.forEach( item =>{
+        //     item.addEventListener("mouseover", activeItem)
+        // })
+    </script>
+</body>
+</html>
